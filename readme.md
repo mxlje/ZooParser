@@ -17,6 +17,14 @@ pull request for that.
 
 ## Usage
 
+First, install the dependencies:
+
+```bash
+bundle
+```
+
+Then run the script:
+
 ```bash
 ruby zoo_parser.rb your_export_file.html
 ```
