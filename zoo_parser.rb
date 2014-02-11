@@ -24,14 +24,14 @@ class ZooParser
         date_added:   Time.at(link.get_attribute(:add_date).to_i).utc,
         origin:       link.get_attribute(:href),
         referer:      link.get_attribute(:referer),
-        s3_url:       nil,
+        image_url:    nil,
         tags:         [],
         title:        link.text,
         type:         link.get_attribute(:type)
       }
 
       large_s3_url = link.get_attribute(:image)
-      bm[:s3_url] = large_s3_url ? large_s3_url.sub("s.jpg", "l.jpg") : nil
+      bm[:image_url] = large_s3_url ? large_s3_url.sub("s.jpg", "l.jpg") : nil
 
       tags = link.get_attribute(:tags)
       bm[:tags] = tags ? tags.split(",") : []
