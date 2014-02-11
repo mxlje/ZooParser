@@ -9,7 +9,7 @@ bookmarks and wanted to convert the HTML file to some fine JSON.
 
 It’s pretty rough, but `ZooParser` does exactly that.
 
-## What it doesn’t to
+## What it doesn’t do
 
 It currently ignores descriptions for bookmarks since I didn’t
 really use them and they were a mess. I would be happy to merge a
