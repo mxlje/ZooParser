@@ -45,12 +45,17 @@ class ZooParser
       json.write "["
       
       @bookmarks.each_with_index do |b, i|
+        print "."
         json.write b.to_json
         json.write "," unless i == @bookmarks.size - 1
       end
 
       json.write "]"
     end
+  end
+
+  def count
+    @bookmarks.count
   end
 end
 
@@ -61,4 +66,8 @@ end
 
 export_file = ARGV.first
 
-ZooParser.new(export_file).to_json
+@parser = ZooParser.new(export_file)
+
+puts "Exporting #{@parser.count} bookmarks, hang tight."
+@parser.to_json
+puts "done."
